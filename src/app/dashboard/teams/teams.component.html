@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <h1>Meet the Team</h1>
+  <p><small>Together we will able to share and to encourage everyone by our advocacies</small></p>
+  <hr>
+  <div class="row">
+    <div class="avatar-container col-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let item of teamMembers">
+      <div>
+        <img src={{item.imageUrl}} class="rounded-circle">
+      </div>
+      <p class="mt-3">{{item.email}}</p>
+    </div>
+  </div>
+</div>

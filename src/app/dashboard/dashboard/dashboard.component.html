@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="d-none d-sm-none d-md-none d-lg-block col-lg-2 col-xl-2 profile">
+    <div class="avatar-container">
+      <div>
+        <img src="../../../assets/images/johndoe.jpeg" class="rounded-circle">
+      </div>
+      <p class="mt-3">Ben John</p>
+    </div>
+    <ul class="text-center">
+      <li [routerLink]="['/dashboard']" routerLinkActive="is-active">Speech</li>
+      <li [routerLink]="['/dashboard/teams']" routerLinkActive="is-active">Teams</li>
+      <li *ngIf="isLoggedIn" [routerLink]="['/']" routerLinkActive="is-active">Log out</li>
+    </ul>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

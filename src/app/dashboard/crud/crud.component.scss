@@ -1,0 +1,182 @@
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    width: 80%;
+    height: 100%;
+}
+
+.button-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,.55);
+}
+
+.alert span {
+    color: white;
+}
+@media (min-width: 320px) {
+    .container {
+        margin: 2% 0;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: .6rem;
+        line-height: 10px;
+    }
+
+    form {
+        font-size: .9rem;
+
+        .form-control {
+            font-size: .6rem;
+        }
+
+        .calendar {
+            height: 75%;;
+        }
+    }
+
+    .button-controls {
+        button {
+            font-size: .5rem;
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    .button-controls {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: inherit;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: 10px;
+    }
+
+    form {
+        font-size: inherit;
+
+        .form-control {
+            font-size: inherit;
+        }
+
+        .calendar {
+            height: 100%;
+        }
+    }
+
+    .button-controls {
+        button {
+            font-size: inherit;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .button-controls {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: inherit;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: 10px;
+    }
+
+    form {
+        font-size: inherit;
+
+        .form-control {
+            font-size: inherit;
+        }
+
+        .calendar {
+            height: 100%;
+        }
+    }
+
+    .button-controls {
+        button {
+            font-size: inherit;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .button-controls {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: inherit;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: 10px;
+    }
+
+    form {
+        font-size: inherit;
+
+        .form-control {
+            font-size: inherit;
+        }
+
+        .calendar {
+            height: 100%;
+        }
+    }
+
+    .button-controls {
+        button {
+            font-size: inherit;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .button-controls {
+        flex-direction: row;
+    }
+        h1 {
+        font-size: inherit;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: 10px;
+    }
+
+    form {
+        font-size: inherit;
+
+        .form-control {
+            font-size: inherit;
+        }
+
+        .calendar {
+            height: 100%;
+        }
+    }
+
+    .button-controls {
+        button {
+            font-size: inherit;
+        }
+    }
+}

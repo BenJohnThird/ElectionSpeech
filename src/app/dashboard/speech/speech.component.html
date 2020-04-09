@@ -1,0 +1,39 @@
+<div class="main-content">
+  <div class="container my-5">
+    <h1>Speeches</h1>
+    <div class="menu-container">
+      <div class="filter-input">
+        <input class="form-control" [(ngModel)]="filterModel" (ngModelChange)="filterSpeech()"
+        [ngModelOptions]="{standalone: true}" placeholder="Search">
+      </div>
+      <div class="create-btn" (click)="createSpeech()">Create Speech</div>
+    </div>
+    <div class="row mt-3">
+      <div *ngFor="let item of speechesArray" class="col-12 col-md-6 col-lg-6 col-xl-4">
+        <div class="speech-container row">
+          <div class="col-10 speech-content" (click)="viewSpeech(item.id)">
+            <h1>{{item.subject}}</h1>
+            <blockquote class="blockquote">
+              <p class="mb-0">{{item.context}}</p>
+              <footer class="blockquote-footer">{{item.author}} <cite title="Source Title">{{item.createdttm}}</cite></footer>
+            </blockquote>
+          </div>
+          <div class="col-2 controls">
+            <!-- <span>
+              <img src="../../../assets/images/icons8-heart-24.png" placement="left" ngbTooltip="Favorite"> 
+            </span> -->
+            <span>
+              <img src="../../../assets/images/icons8-share-24.png" (click)="shareSpeech(item)" placement="left" ngbTooltip="Share"> 
+            </span>
+            <span>
+              <img src="../../../assets/images/icons8-edit-24.png" (click)="updateSpeech(item.id)" placement="left" ngbTooltip="Edit"> 
+            </span>
+            <span>
+              <img src="../../../assets/images/icons8-delete-bin-24.png" (click)="deleteSpeech(item)" placement="left" ngbTooltip="Delete"> 
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container  my-5">
+  <h1>{{headline}}</h1>
+  <p><small clas="text-secondary">{{subtext}}</small></p>
+  <hr>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <ngb-alert class="bg-success alert" *ngIf="submitted && !timerStops">
+      <span>{{alertMessage}}</span>
+    </ngb-alert>
+    <div class="form-group">
+      <label for="Context">Context</label>
+      <textarea class="form-control" id="Context" 
+      required [(ngModel)]="model.context" name="context"
+      rows="5" #context="ngModel"></textarea>
+      <p><small class="text-danger" [hidden]="context.valid || context.pristine"> Context is required</small></p>
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject/Keyword</label>
+      <input type="text" class="form-control" id="subject"
+             required
+             [(ngModel)]="model.subject" name="subject"
+             #subject="ngModel">
+      <p><small class="text-danger" [hidden]="subject.valid || subject.pristine"> Subject/Keyword is required</small></p>
+    </div>
+    <div class="form-group row">
+      <div class="col">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author"
+               required
+               [(ngModel)]="model.author" name="author"
+               #author="ngModel">
+        <p><small class="text-danger" [hidden]="author.valid || author.pristine"> Author is required</small></p>
+      </div>
+      <div class="col">
+        <label for="createdttm">Date</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                  required
+                  name="createdttm" [(ngModel)]="dateModel" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+              <img src="../../../assets/images/icons8-calendar-30-24.png">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-controls">
+      <button type="button" *ngIf="isDisplayView || isUpdateView" (click)="shareSpeech()"
+      class="btn btn-info" [disabled]="!heroForm.form.valid">Share to team</button>
+      <button type="submit" *ngIf="isCreateView || isUpdateView"
+      class="btn btn-success" [disabled]="!heroForm.form.valid">Save Speech</button>
+      <button type="button" *ngIf="isUpdateView" (click)="deleteSpeech()"
+      class="btn btn-danger" [disabled]="!heroForm.form.valid">Delete Speech</button>
+      <button type="button" *ngIf="isDisplayView || isUpdateView"
+      class="btn btn-default" routerLink="/dashboard">Go Back</button>
+    </div>
+  </form>
+</div>
