@@ -10,3 +10,4 @@ Run `ng serve` to run and view locally
 - Utilized Lazy-loading modules to increase the efficiency of the application.
 - All data are just MOCK data
 - Integrated and used rxjs Subject to communicate with the components.
+- Have integrated subject
